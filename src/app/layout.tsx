@@ -1,20 +1,20 @@
 // components/Layout.tsx
 "use client"
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import {Capriola} from "next/font/google";
 import "./globals.css";
 import { useState } from "react";
 import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const geistSans = Capriola({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-capriola",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const geistMono = Capriola({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-capriola",
 });
 
 const metadata: Metadata = {
@@ -44,8 +44,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>{
       <body
         style={backgroundImageStyle} className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <div className="grid grid-cols-2 mr-16 ">
-      <h1 className="text-3xl float-left">M@EYDAH</h1>
+      <div className="grid grid-cols-2 lg:mr-20 sm:mr-12">
+      <h1 className="text-3xl float-left">M@@EYDAH</h1>
       <div className="lg:hidden">
       <button
       className="float-right text-white text-2xl focus:outline-none"
@@ -54,7 +54,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>{
       ☰
       </button>
       {isMenuOpen && (
-          <div className="mt-10 flex flex-col space-y-2  border-2 border-white max-w-screen-2xl rounded-md mr-5">
+          <div className="mt-10 flex flex-col space-y-2  border-2 border-white  top-full left-0 w-full rounded-md mr-5">
             <Link href="/" className="text-white hover:text-gray-300 p-4">
               Home
             </Link>
@@ -76,10 +76,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>{
            <Sidebar/>
         </div>
         <div className="bg-yellow-700 overflow-y-auto">
-            <div className="bg-fuchsia-500 flex mt-4 m-4">
+          <div className="">
+            <div className="bg-fuchsia-500 flex">
                 <div className="bg-slate-300 w-1/5">ccc</div>
-                <div className="bg-red-700 w-4/5">
-                <nav className="flex space-x-4 mx-auto">
+                <div className="bg-red-700 w-4/5 sm:hidden lg:block !hidden lg:!block">
+                <nav className="flex space-x-4">
                 <Link href="/" className="hover:text-gray-600">
                   Home
                 </Link>
@@ -95,6 +96,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>{
               </nav>
 
                 </div>
+            </div>
             </div>
             <div className="bg-indigo-500">
               {children}
