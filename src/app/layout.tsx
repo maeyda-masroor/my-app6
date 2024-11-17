@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { useState } from "react";
 import Link from "next/link";
-
+import Sidebar from "@/components/Sidebar";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -44,7 +44,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>{
       <body
         style={backgroundImageStyle} className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 mr-16 ">
       <h1 className="text-3xl float-left">M@EYDAH</h1>
       <div className="lg:hidden">
       <button
@@ -71,15 +71,36 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>{
         )}
       </div>
       </div>
-      <div className="grid lg:grid-cols-[1fr_2fr] sm:grid-cols-1 sm:grid-rows-1fr-1fr gap-4">
+      <div className="grid lg:grid-cols-[1fr_2fr] sm:grid-cols-1 sm:grid-rows-1fr-1fr gap-4 mr-16 mt-4">
         <div className="bg-red-300">
-           xxx 
+           <Sidebar/>
         </div>
-        <div className="bg-yellow-700">
-            vv
+        <div className="bg-yellow-700 overflow-y-auto">
+            <div className="bg-fuchsia-500 flex mt-4 m-4">
+                <div className="bg-slate-300 w-1/5">ccc</div>
+                <div className="bg-red-700 w-4/5">
+                <nav className="flex space-x-4 mx-auto">
+                <Link href="/" className="hover:text-gray-600">
+                  Home
+                </Link>
+                <Link href="/about" className="hover:text-gray-600">
+                  About
+                </Link>
+                <Link href="/services" className="hover:text-gray-600">
+                  Services
+                </Link>
+                <Link href="/contact" className="hover:text-gray-600">
+                  Contact
+                </Link>
+              </nav>
+
+                </div>
+            </div>
+            <div className="bg-indigo-500">
+              {children}
+            </div>
         </div>
       </div>
-      {children}
       </body>
     </html>
   );
