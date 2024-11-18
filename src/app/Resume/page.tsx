@@ -1,4 +1,3 @@
-import Image from "next/image"
 export default function About(){
     return <div>
     <div className="m-5 p-3">
