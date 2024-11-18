@@ -56,14 +56,14 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>{
       </button>
       {isMenuOpen && (
           <div className="mt-10 flex flex-col space-y-2  border-2 border-white  top-full left-0 w-full rounded-md mr-5">
-            <Link href="/" className="text-white hover:text-gray-300 p-4">
+            <Link href="/About" className="text-white hover:text-gray-300 p-4">
               Home
             </Link>
-            <Link href="/about" className="hover:text-gray-300 text-white p-4">
+            <Link href="/Resume" className="hover:text-gray-300 text-white p-4">
               About
             </Link>
-            <Link href="/services" className="hover:text-gray-300 text-white p-4">
-              Services
+            <Link href="/Porfolio" className="hover:text-gray-300 text-white p-4">
+              Work
             </Link>
             <Link href="/contact" className="hover:text-gray-300 text-white p-4">
               Contact
@@ -98,7 +98,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>{
                 </div>
                 <div className="bg-white rounded-lg w-28 h-24 place-items-center">
                 <Image width={70} height={70} src="https://img.icons8.com/ios-filled/50/office.png" alt="office"/>
-                <Link href="/services" className="hover:text-gray-600">
+                <Link href="/Porfolio" className="hover:text-gray-600">
                   Work
                 </Link>
                 </div>
@@ -110,7 +110,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>{
                 </div>
                 <div className="bg-white rounded-lg w-28 h-24 place-items-center">
                 <Image width={70} height={70} src="https://img.icons8.com/color/48/contact-card.png" alt="contact-card"/>
-                <Link href="/services" className="hover:text-gray-600">
+                <Link href="/contact" className="hover:text-gray-600">
                   Contact
                 </Link>
                 </div>

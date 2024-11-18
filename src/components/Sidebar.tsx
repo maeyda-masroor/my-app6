@@ -31,7 +31,7 @@ export default function Sidebar(){
             </svg>
             </div>
         </div>
-        <div className="bg-white rounded-md p-10 m-5 lg:w-[350px] lg:h-auto sm:w-[300px] sm:h-[250px]">
+        <div className="bg-white rounded-md p-10 m-5 lg:w-[350px] lg:h-auto sm:w-[300px] sm:h-auto">
             <div className="flex gap-8 bg-gray-300 p-3">
             <div className="">
             <Image width={50} height={50} src="https://img.icons8.com/ios-filled/50/phone.png" alt="phone"/>
