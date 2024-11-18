@@ -6,6 +6,7 @@ import "./globals.css";
 import { useState } from "react";
 import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
+import Image from "next/image";
 const geistSans = Capriola({
   subsets: ["latin"],
   weight: "400",
@@ -72,33 +73,53 @@ const RootLayout = ({ children }: { children: React.ReactNode }) =>{
       </div>
       </div>
       <div className="grid lg:grid-cols-[1fr_2fr] sm:grid-cols-1 sm:grid-rows-1fr-1fr gap-4 mr-16 mt-4">
-        <div className="bg-red-300">
+        <div className="">
            <Sidebar/>
         </div>
-        <div className="bg-yellow-700 overflow-y-auto">
+        <div className="overflow-y-auto">
           <div className="">
-            <div className="bg-fuchsia-500 flex">
-                <div className="bg-slate-300 w-1/5">ccc</div>
-                <div className="bg-red-700 w-4/5 sm:hidden lg:block !hidden lg:!block">
+            <div className="flex">
+                <div className="w-1/5"></div>
+                <div className="h-32 rounded-l-xl text-black p-4 w-4/5 sm:hidden lg:block !hidden lg:!block">
                 <nav className="flex space-x-4">
-                <Link href="/" className="hover:text-gray-600">
-                  Home
-                </Link>
-                <Link href="/about" className="hover:text-gray-600">
+                <div className="bg-white rounded-lg h-24 w-28 place-items-center p-4">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 40 40">
+                <path fill="#98ccfd" d="M1.5,5c0-1.733,1.767-3.5,3.5-3.5h30c1.733,0,3.5,1.767,3.5,3.5v26c0,1.733-1.767,3.5-3.5,3.5H6.819 L1.5,38.933V5z"></path><path fill="#4788c7" d="M35,2c1.458,0,3,1.542,3,3v26c0,1.458-1.542,3-3,3H7H6.638L6.36,34.232L2,37.865V5 c0-1.458,1.542-3,3-3H35 M35,1H5C3,1,1,3,1,5v35l6-5h28c2,0,4-2,4-4V5C39,3,37,1,35,1L35,1z"></path><path fill="#fff" d="M20 7.259A1.696 1.696 0 1 0 20 10.651 1.696 1.696 0 1 0 20 7.259zM21 25L21 13 17 13 17 15 19 15 19 25 17 25 17 27 23 27 23 25z"></path>
+                </svg> 
+                <Link href="/About" className="hover:text-gray-600">
                   About
                 </Link>
-                <Link href="/services" className="hover:text-gray-600">
-                  Services
+                </div>
+                <div className="bg-white rounded-lg w-28 h-24 place-items-center">
+                <Image width={70} height={70} src="https://img.icons8.com/bubbles/100/resume.png" alt="resume"/>
+                <Link href="/Resume" className="hover:text-gray-600">
+                  Resume
                 </Link>
-                <Link href="/contact" className="hover:text-gray-600">
+                </div>
+                <div className="bg-white rounded-lg w-28 h-24 place-items-center">
+                <Image width={70} height={70} src="https://img.icons8.com/ios-filled/50/office.png" alt="office"/>
+                <Link href="/services" className="hover:text-gray-600">
+                  Work
+                </Link>
+                </div>
+                <div className="bg-white rounded-lg w-28 h-24 place-items-center">
+                <Image width={70} height={70} src="https://img.icons8.com/color/48/blog.png" alt="blog"/>
+                <Link href="/services" className="hover:text-gray-600">
+                    Blog
+                </Link>
+                </div>
+                <div className="bg-white rounded-lg w-28 h-24 place-items-center">
+                <Image width={70} height={70} src="https://img.icons8.com/color/48/contact-card.png" alt="contact-card"/>
+                <Link href="/services" className="hover:text-gray-600">
                   Contact
                 </Link>
-              </nav>
+                </div>
+               </nav>
 
                 </div>
             </div>
             </div>
-            <div className="bg-indigo-500">
+            <div className="">
               {children}
             </div>
         </div>
