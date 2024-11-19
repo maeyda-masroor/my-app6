@@ -9,7 +9,7 @@ export default function Contact(){
             <span className="text-3xl font-extrabold text-white">design work or partnerships.</span>
             </h3>
             <form className="text-black">
-            <label className="font-extrabold text-black">name *</label>
+            <label className="font-extrabold text-black">name</label>
             <br/>
             <input 
             type="text" 
@@ -17,7 +17,7 @@ export default function Contact(){
             placeholder="Enter text"
             /> 
             <br/>
-            <label className="font-extrabold text-black">name *</label>
+            <label className="font-extrabold text-black">name</label>
             <br/>
             <input 
             type="text" 
@@ -25,7 +25,7 @@ export default function Contact(){
             placeholder="Enter text"
             />
             <br/>
-            <label className="font-extrabold text-black">name *</label>
+            <label className="font-extrabold text-black">name</label>
             <br/>
             <input 
             type="text" 
